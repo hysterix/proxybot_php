@@ -6,12 +6,12 @@
 $config['server'] = "localhost";
 
 //database login name
-$config['user'] = "dbuser";
+$config['user'] = "proxybotizzle";
 //database login password
-$config['pass'] = "dbpass";
+$config['pass'] = "proxybotinthehizzie!!";
 
 //database name
-$config['database'] = "db";
+$config['database'] = "proxybot";
 
 // table prefix
 $config['tablePrefix'] = "";
