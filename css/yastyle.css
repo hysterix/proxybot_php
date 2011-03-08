@@ -1,0 +1,579 @@
+body {
+	margin:0px;
+	border:0;
+	padding:0;
+	background:#000000;
+	color:#ffffff;
+	font-family:Courier New, Anadle Mono, verdana, sans-serif; 
+	font-size:84%;
+	overflow:auto;
+	background-image:url('../images/mandelbrot.png');
+}
+
+a {
+	color:#ffffff;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#8C8C8C;
+	text-decoration:none;
+}
+
+a:active {
+	outline:none;
+}
+
+a:focus {
+	outline:none;
+}
+
+:focus {
+  -moz-outline-style: none;
+}
+
+.main {
+	position:absolute;
+	margin-top:70px;
+	left:50px;
+	width:500px;
+}
+
+.alert {
+	color:#ff0000;
+}
+
+.succeed {
+	color:#ffffff;
+}
+
+.logo {
+	position:relative;
+	top:5px;
+	left:-5px;
+	height:auto;
+	width:auto;
+	text-align:right;
+}
+
+.title {
+	position:absolute;
+	top:-30px;
+	left:450px;
+	height:auto;
+	width:250px;
+}
+
+.smallfont {
+	font-weight:bold;
+	font-size:14px;
+}
+
+.resulttype {
+	font-weight:bold;
+	font-size:16px;
+}
+
+.mainform {
+	position:relative;
+	top:10px;
+	left:0px;
+	height:auto;
+	width:600px;
+}
+
+.loader {
+	position:absolute;
+	top:0px;
+	left:-50px;
+	width:400;
+	font-size:12px;
+}
+
+.cssfun {
+	position:relative;
+	top:7px;
+	
+}
+
+.banfun {
+	position:relative;
+	top:7px;
+	width:350px;
+	
+}
+
+.tehhidden {
+	display:none;
+}
+
+.content {
+	position:relative;
+	height:auto;
+	background:#000000;
+	filter:alpha(opacity=75);
+	-moz-opacity:.75;
+	opacity:.75;
+	z-index:0;
+}
+
+.plainmenu {
+	position:relative;
+	margin-top:0px;
+	margin-left:15px;
+}
+
+.textoutput {
+	position:relative;
+	top:-30px;
+	margin-top:15px;
+	margin-left:45px;
+	height:auto;
+	width:auto;
+	filter:alpha(opacity=80);
+	-moz-opacity:.80;
+	opacity:.80;
+}
+
+.textoutput a {
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+	color:ffffff;
+}
+
+.dispbutton a {
+	position:relative;
+	top:-21px;
+	left:45px;
+	font-size:18px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#00FF00;
+	background:#000000;
+	border-style:inset;
+	border-width:2px;
+	padding:3px;
+	filter:alpha(opacity=60);
+	-moz-opacity:.60;
+	opacity:.60;
+}
+
+.yabutton a {
+	position:relative;
+	width:300px;
+	background:#000000;
+	padding:20px;
+	font-size:18px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+	color:#00FF00;
+	background:#000000;
+	border-style:inset;
+	border-width:2px;
+	padding:3px;
+	filter:alpha(opacity=80);
+	-moz-opacity:.80;
+	opacity:.80;
+}
+
+.yabutton a:hover {
+	color:#00FF00;
+	background:#000000;
+	text-decoration:none;
+	border-style:outset;
+	border-width:2px;
+	padding:3px;
+}
+
+#mclick a {
+	position:relative;
+	top:-22px;
+	left:135px;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#00FF00;
+	filter:alpha(opacity=80);
+	-moz-opacity:.80;
+	opacity:.80;
+}
+
+.proxynum a {
+	position:relative;
+	left:286px;
+	top:0px;
+	display:inline;
+	font-size:18px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#00FF00;
+	background:#000000;
+	border-style:inset;
+	border-width:2px;
+	padding:3px;
+	filter:alpha(opacity=60);
+	-moz-opacity:.60;
+	opacity:.60;
+	z-index:3;
+}
+
+.proxynum a:hover {
+	color:#00FF00;
+	background:#000000;
+	text-decoration:none;
+	border-style:outset;
+	border-width:2px;
+	padding:3px;
+}
+
+.dispbutton a {
+	position:relative;
+	top:-21px;
+	left:45px;
+	font-size:18px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#00FF00;
+	background:#000000;
+	border-style:inset;
+	border-width:2px;
+	padding:3px;
+	filter:alpha(opacity=60);
+	-moz-opacity:.60;
+	opacity:.60;
+}
+
+.dispbutton a:hover {
+	position:relative;
+	left:45px;
+	color:#00FF00;
+	background:#000000;
+	text-decoration:none;
+	border-style:outset;
+	border-width:2px;
+	padding:3px;
+}
+
+.dispbutton2 a {
+	position:relative;
+	top:-42px;
+	left:150px;
+	font-size:18px;
+	font-weight:bold;
+	text-decoration:none;
+	text-decoration:none;
+	color:#00FF00;
+	background:#000000;
+	border-style:inset;
+	border-width:2px;
+	padding:3px;
+	filter:alpha(opacity=60);
+	-moz-opacity:.60;
+	opacity:.60;
+}
+
+.dispbutton2 a:hover {
+	position:relative;
+	left:150px;
+	color:#00FF00;
+	background:#000000;
+	text-decoration:none;
+	border-style:outset;
+	border-width:2px;
+	padding:3px;
+}
+
+.white {
+	color:#ffffff;
+}
+
+#toscour {
+	top:0px;
+}
+
+#totest {
+	top:10px;
+}
+
+#toadmin {
+	top:10px;
+}
+
+#todatabase {
+	top:10px;
+}
+
+#toban {
+	top:10px;
+}
+
+#tohelp {
+	top:10px;
+}
+
+.smlnewgood {
+	position:relative;
+	top:-66px;
+	left:8px;
+	float:right;
+	font-size:16px;
+	color:#00FF00;
+	background:#000000;
+	padding:4px;
+	border: 3px #0C0D0C groove;
+}
+
+.indexfx {
+	position:relative;
+	top:-8px;
+}
+
+.helpfx {
+	position:relative;
+	top:-50px;
+}
+
+.ohm {
+	position:relative;
+	margin-top:-147px;
+	margin-right:-255px;
+	float:right;
+}
+
+.ohmsearch {
+	position:relative;
+	margin-top:-206px;
+	margin-right:-206px;
+}
+
+.tehsearchoutput {
+	position:relative;
+	top:-630px;
+	left:400px;
+}
+
+.tehbannedoutput {
+	position:relative;
+	top:10px;
+	left:27px;
+}
+
+.tehtestoutput {
+	position:relative;
+	top:10px;
+	left:27px;
+}
+
+.boxloader {
+	width:360px;
+	background:#000000;
+	padding-top:5px;
+	padding-bottom:25px;
+	padding-right:5px;
+	padding-left:5px;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+	color:#ffffff;
+	filter:alpha(opacity=80);
+	-moz-opacity:.80;
+	opacity:.80;
+}
+
+.boxloaderbigger {
+	padding-bottom:35px;
+}
+
+.miniwarnmsg {
+	position:relative;
+	top:10px;
+	left:57px;
+	width:250px;
+	background:#000000;
+	padding:4px;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+	color:#00FF00;
+	border-style:inset;
+	border-width:2px;
+	filter:alpha(opacity=80);
+	-moz-opacity:.80;
+	opacity:.80;
+}
+
+.warnmsgstyle{
+	width:300px;
+	background:#000000;
+	padding:20px;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;
+	color:#ffffff;
+	filter:alpha(opacity=80);
+	-moz-opacity:.80;
+	opacity:.80;
+}
+
+/* this is not the right way to do css but i'm over it :O */
+.warnmsg1 {
+	position:relative;
+	top:10px;
+	left:45px;
+	
+}
+
+.warnmsg2 {
+	position:relative;
+	top:345px;
+	left:100px;
+	
+}
+
+.warnmsg3 {
+	position:relative;
+	top:345px;
+	left:100px;
+	
+}
+
+.warnmsg4 {
+	position:relative;
+	top:345px;
+	left:100px;
+	
+}
+
+.warnmsg5 {
+	position:relative;
+	top:345px;
+	left:100px;
+	
+}
+
+.warnmsg6 {
+	position:relative;
+	top:345px;
+	left:100px;
+	
+}
+
+.warnmsg7 {
+	position:relative;
+	top:-30px;
+	left:40px;
+	
+}
+
+.warnmsg8 {
+	position:relative;
+	top:-30px;
+	left:40px;
+	
+}
+
+.warnmsg15 {
+	position:relative;
+	top:-30px;
+	left:40px;
+	
+}
+
+.warnmsg9 {
+	position:relative;
+	top:-30px;
+	left:40px;
+	
+}
+
+.warnmsg10 {
+	position:relative;
+	top:-660px;
+	left:427px;
+	
+}
+
+.warnmsg11 {
+	position:relative;
+	top:10px;
+	left:44px;
+	
+}
+
+.warnmsg12 {
+	position:relative;
+	top:-20px;
+	left:44px;
+	
+}
+
+.warnmsg13 {
+	position:relative;
+	top:10px;
+	left:44px;
+	
+}
+
+.warnmsg14 {
+	position:relative;
+	top:10px;
+	left:41px;
+	
+}
+
+.anonfun {
+	position:absolute; /* :O - absolute: a necessary evil; i hate absolutes */
+	top:172px;
+	left:86px;
+	display:inline;
+	font-weight:bold;
+}
+
+.pvers {
+	position:relative;
+	width:250px;
+	font-weight:bold;
+	font-size:32px;
+	background:#000000;
+	padding-top:8px;
+	padding-bottom:8px;
+	padding-right:8px;
+	padding-left:8px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:right;
+	color:#00FF00;
+	background:#000000;
+	border-style:inset;
+	border-width:2px;
+	filter:alpha(opacity=60);
+	-moz-opacity:.60;
+	opacity:.60;
+}
+
+.byme {
+	position:relative;
+	top:-7px;
+	left:158px;
+	width:105px;
+	background:#000000;
+	padding-top:8px;
+	padding-bottom:8px;
+	padding-right:8px;
+	padding-left:0px;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:right;
+	color:#00FF00;
+	background:#000000;
+	border-style:inset;
+	border-width:2px;
+	filter:alpha(opacity=60);
+	-moz-opacity:.60;
+	opacity:.60;
+}

@@ -1,0 +1,86 @@
+- 0.3 - 
+	- default proxy timeout value raised from three to five seconds
+	- default site timeout value raised from fifteen to 120 seconds
+	- default value of max number of new and good proxies IS OVER 9000 (due to large number of proxies returned per click, and high speed of proxy checking)
+	- default behavior not to display the number of new or good proxies that can be checked
+	- default number of max simultaneous connections is 100
+	- default choice for search tab changed to mysql
+	- fixed dotted border around menu links css bug
+	- fixed hidemyass md5 hashing bug; was hashing http header info corrupting hash value
+	- fixed curl header caching bug
+	- fixed 'go back' button bug on displaying pages
+	- added curlopt_fresh_connect to prevent retrieving cached pages
+	- added proxy new/good/anon/dead/banned display to upper right corner on all tabs
+	- added loading screen for initial proxy scrape
+	- added database maintenance tab, enabling duplicate removal and table truncate
+	- added banned table/section, enabling easy codeen/planet proxy banning
+	- added default planetlab/codeen banned list
+	- added proxy anonymous level checker
+	- added inactive table; now no good proxies are ever deleted, only stored for checking at a later time
+	- added test dead proxies to testing tab
+	- user can now modify max number of simultaneous curl connections (MAX_CONNECTIONS)
+	- user can now turn on or off automatic duplicate removal (AUTO_DUPE_REMOVE) - default behavior is on
+	- user can now display unknown hidemyass hashes/port images inside proxybot for stupidly easy hash hijacking - (HIDEMYASS_HASHIFIER) - default is off	
+	- user can now change time-out value of site loading (SITE_TIMEOUT)
+	- user can now change max number of new proxies to be checked per click (MAX_NEW_CHECK)
+	- user can now change max number of good proxies to be checked per click (MAX_GOOD_CHECK)
+	- user can now change whether or not the value of new proxies to be checked is displayed (SHOW_NEW_CHECK)
+	- user can now change whether or not the value of good proxies to be checked is displayed (SHOW_GOOD_CHECK)
+	- user can now change whether or not to delete banned ips before testing (AUTO_BAN) - default on
+	- user can now turn on or off the truncate function (ALLOW_TRUNCATE) - default behavior is off
+	- user can now display hide my ass port numbers and hashes from within proxybot
+	- user can now change database table names in config.inc.php file ($config['tbl_new'], $config['tbl_good'], $config['tbl_inactive'], $config['tbl_banned'])
+	- user can now select all/none for easy proxy scraping choosing 
+	- user can now output anonymous proxies only if desired
+	- modified charon codebase to enable multi-threaded proxy anonymous level checking, as well as added
+	  the ability to check anonymity level of proxies without making requests back to self as charon originally did	
+	- gui cleaned up for all tabs
+	- csv.php, plaintext.php, and proxychains.php was depricated by output.php
+	- split_url.php and simple_html_dom.php have both been depricated in favor of custom regex
+	- number of proxies scraped as well as script execution time is now displayed
+	- both grey and white hidemyass port images are grabbed per click if hashifier option is on, ensuring all hashes are recovered
+	- fetching hidemyass proxies has been significantly sped up due to multi-threading, and other function optimizations
+	- background image updated; now with more hofmann and mandelbrot (adding to the size)
+	- logo image updated - thanks dr_eval
+	- user-agent strings file reduced; only the most common user agents used - thanks pedrobear
+	- included a gnu license to ensure proxybot remains 100% free and in the public domain continually
+	
+	-= new sites added =-
+		- 2ch.net
+		- atomintersoft.com
+		- comp-info.ru
+		- cybersyndrome.net
+		- freeproxy.ch
+		- freeproxy.ru
+		- freeproxylists.com
+		- getfreeproxy.info
+		- ip-adress.com
+		- ipcn.org
+		- j1f.net
+		- my-proxy.com
+		- proxiesthatwork.com
+		- proxy-heaven.blogspot.com
+		- proxy-list.net
+		- proxygo.com.ru
+		- proxyleech.com
+		- proxylists.net
+		- proxyserverfinder.com
+		- rosinstrument.com
+		- speedtest.at 
+		- xroxy.com
+		
+	-= old sites fixed =-
+		- hidemyass.com - direct linking to /hide-planetlab/ no longer exists; changed url
+		  and added a significant number of md5 hashes to the ghetto tables flat file
+		- samair.ru obfuscated the previously scraped page with javascript;
+		  changed to smaller, but bot friendly page
+		  
+	-= old sites removed =-
+		- bestproxylist.cn: no such animal exists; gone, never to be heard from again
+	
+- 0.2 - 
+	- fixed proxy test function to work correctly on more hosts
+	- fixed bug in proxy retest function
+	- lowered time-out value of proxy checking function, increasing speed
+	- user can now change time-out value in config file (PROXY_TIMEOUT)
+	- raised the number of good proxies to check at a time from 10 to 50

@@ -1,0 +1,88 @@
+
+			----------------------------------------------------
+			       ------------ proxybot 0.3 ------------
+			----------------------------------------------------
+			    --------------- by: hysterix ---------------
+
+Requirements:
+ apache, php 5, curl
+
+
+What:
+	Feature List:
+		- scour sites for proxies
+		- multi-threaded proxy testing
+		- multi-threaded proxy anonymity checking (internal or external check)
+		- output proxies in certain formats
+		- banned list
+		- scour sites for new codeen/planet proxies list
+		- db maintenance section
+
+		
+How:
+	Select your mode:
+	- search
+	- test
+	- output
+	- banned
+	- database
+	- help
+
+	search - select which sites you want to scour for proxies and configure the output once the list is complete
+		 - you can save the list into the database to be checked later
+		 - you can output the list as plaintext or csv
+		 - you can choose which sites you want to search for proxies
+		 - select mysql as the option in order to check proxy status
+
+	test   - select which proxies you want to test
+		 - you can test new proxies entered from the previous search
+		 - you can test good proxies to make sure they are still good
+		 - you can test inactive proxies to see if they might be up
+		 - you can test the anonymity level of proxies after they are known to be good
+		 - if a new proxy scoured never works once, it is deleted from the database
+		 - if a good or anonymous proxy is down, it is put into the inactive table
+		 - if an inactive proxy is tested and is still down, it stays in the inactive table
+		 - if an inactive proxy is tested and is up it is put into the good table
+		 - there are over 9000 new, good, and inactive proxies allowed per check by default
+
+	output - select how you want your final list format
+		 - you can output anonymous proxies, good, new, inactive, or banned proxies
+		 - you can output the proxy list as plaintext, csv, or as proxychains format: example - (socks4 192.168.1.49 1080)
+
+	banned - scour sites for new codeen/planet proxies to ban
+		 - you can save the output to mysql in the banned table
+		 - you can output as a plaintext list
+		 - you can choose which sites you want to search for new codeen/planet proxies
+	
+	database - perform simple maintenance on the database
+		 - you can select both the new + good table, new, good, inactive, or banned table
+		 - you can eliminate duplicates, or truncate table
+	help   - very simple in program help menu
+	
+	setup  - there is no update from v0.2 -> v0.3. completely remove all tables and data as the table structure has changed
+		   - delete entire proxybot directory and load new directory in its place; files have been changed, added, and removed
+		   - all database info is inside of config.inc.php; edit this file depending on your database setup
+		   - all other configuration for proxybot is in config.php; change depending on host settings
+		   - set ALLOW_TRUNCATE to 1 in config.php if you want to allow deleting of tables; not a good idea on a live site
+		   - free host disclaimer:
+			  proxybot does not work on free hosts for the following reasons:
+				1. most free hosts have a very low default timeout; the script needs time to scour and to check
+				2. lowering the number of proxies to check does not really help on free hosts; the checking feature does not work at all
+				3. CURLOPT_FOLLOWLOCATION + php + open_basedir or safe_mode = fuckup
+					see: http://us.php.net/manual/ro/function.curl-setopt.php#71313 for workaround; don't bother, it still failed us
+				4. free hosts most likely have a max number of curl requests and proxybot surely exceeds it
+			
+				
+Why:
+	Why did I include a gnu gpl?  As the level of sophistication of this program grew to rival that of commercial software out there, 
+	I realized the necessity of a license; to prevent this code from ever being anything but 100% open source, and 100% public domain.
+
+	quote of the day:
+	 "As you think, so shall you become." - Bruce Lee
+
+
+Credits:
+ 	curl class: David - semlabs.co.uk
+	  new logo: dr_eval
+inspiration to 
+ cut down bulk: pedrobear
